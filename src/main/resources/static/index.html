@@ -5,9 +5,10 @@
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/main.css" rel="stylesheet">
     <script src="/webjars/jquery/jquery.min.js"></script>
-    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+  <!--   <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script> -->
     <script src="/app.js"></script>
+    <script src="/rest.js"></script>
 </head>
 <body>
 <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
@@ -62,16 +63,27 @@
                 <option value="DELETE">DELETE</option>
                 </select>
                 <input type="text" name="url" id="url" class="span10" placeholder="yourapihere.com" data-bind="value:url,valueUpdate:'keyup'">
-                <button id="send" class="btn btn-default" type="submit">Send</button>
+                <button id="rest_send" class="btn btn-default" type="submit">Send</button>
                 </div>
-                 <div class="form-group">
+                
+                  <div class="form-group header-group">
+                  <div class="col-sm-12">
+                 <input type="text" name="header_name" id="header_name" class="span10" placeholder="header name" data-bind="value:url,valueUpdate:'keyup'">
+                  <input type="text" name="header_value" id="header_value" class="span10" placeholder="header value" data-bind="value:url,valueUpdate:'keyup'">
+                </div>
+                 <div class="col-sm-12">
+                    <p><a href="#" id="add-header" data-bind="click:addBlankHeader"><i class="icon-plus"></i> Add another header</a></p>
+                </div>
+                </div>
+                
+                <div class="form-group">
                   <div class="col-sm-8">
-                <textarea name="body" class="input-block-level" style="min-width: 100%" rows="6" data-bind="text:body"></textarea>
+                <textarea name="body" id="request_body" class="input-block-level" style="min-width: 100%" rows="6" data-bind="text:body"></textarea>
                 </div>
                 </div>
                   <div class="form-group">
                   <div class="col-sm-8">
-                <textarea name="response_body" class="input-block-level" style="min-width: 100%" rows="6" data-bind="text:body"></textarea>
+                <textarea name="response_body" id="response_body" class="input-block-level" style="min-width: 100%" rows="6" data-bind="text:body"></textarea>
                 </div>
                 </div>
          </form>

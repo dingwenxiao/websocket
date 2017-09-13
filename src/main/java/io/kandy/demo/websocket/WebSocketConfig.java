@@ -1,4 +1,4 @@
-package demo.websocket;
+package io.kandy.demo.websocket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

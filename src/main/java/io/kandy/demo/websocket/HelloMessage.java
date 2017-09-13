@@ -1,4 +1,4 @@
-package demo.websocket;
+package io.kandy.demo.websocket;
 
 public class HelloMessage {
   private String name;
