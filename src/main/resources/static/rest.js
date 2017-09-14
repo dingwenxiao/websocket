@@ -2,7 +2,32 @@ $(function() {
 	$("#rest_send").click(function() {
 		send();
 	});
+	
+	$("#add-header").click(function() {
+		addHeader();
+	});
+	
+	$("#remove-header").click(function() {
+		removeHeader();
+	});
 });
+
+function addHeader() {
+//	$(".add-header").prev().after(
+//	'<div class="col-sm-12 header-col">'
+//	+'<input type="text" name="header_name" class="span10" placeholder="header name">'
+//    +'<input type="text" name="header_value" class="span10" placeholder="header value">'
+//   +'</div>');
+	
+	$(".header-group").prepend('<div class="col-sm-12 header-col">'
+			+'<input type="text" name="header_name" class="span10" placeholder="header name">'
+		    +'<input type="text" name="header_value" class="span10" placeholder="header value">'
+		   +'</div>');
+}
+
+function removeHeader() {
+	$(".add-header").prev().remove();
+}
 
 function send() {
 	var method = $("#method").val();

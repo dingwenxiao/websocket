@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import io.kandy.demo.rest.services.RestRequestService;
 
 
+
 @Controller
 public class RestController {
 
@@ -38,10 +39,11 @@ public class RestController {
   @ResponseBody
   public ResponseEntity<?> getResponse(@RequestBody RestRequestBody requestBody) {
     ResponseEntity<?> response = restRequestService.getResponse(requestBody);
-    String responseContent = (String) response.getBody();
-    RestResponse restResponse = new RestResponse();
-    restResponse.setContent(responseContent);
-    return new ResponseEntity<String>(restResponse.toString(), response.getStatusCode());
+//    String responseContent = (String) response.getBody();
+//    RestResponse restResponse = new RestResponse();
+//    restResponse.setContent(responseContent);
+//    return new ResponseEntity<String>(restResponse.toString(), response.getStatusCode());
+    return response;
   }
 
 }
