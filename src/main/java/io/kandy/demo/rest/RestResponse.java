@@ -4,6 +4,16 @@ public class RestResponse {
 
   private String content;
 
+  private Integer responseCode;
+
+  public Integer getResponseCode() {
+    return responseCode;
+  }
+
+  public void setResponseCode(Integer responseCode) {
+    this.responseCode = responseCode;
+  }
+
   public String getContent() {
     return content;
   }
@@ -15,6 +25,6 @@ public class RestResponse {
 
   @Override
   public String toString() {
-    return "{\"content\": \"" + content + "\"}";
+    return "{\"statusCode:\"" + responseCode + ", \"content\": \"" + content + "\"}";
   }
 }

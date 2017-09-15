@@ -59,6 +59,7 @@ function restRquest(requestData) {
 		url : "execute_request",
 		data : JSON.stringify(requestData),
 		contentType:'application/json',
+		dataType:'text',
 		success: function (response) {
             	$("#response_body").val(response);
         },

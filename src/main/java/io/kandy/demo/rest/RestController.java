@@ -37,13 +37,15 @@ public class RestController {
 
   @RequestMapping(value = "/execute_request", method = RequestMethod.POST)
   @ResponseBody
-  public ResponseEntity<?> getResponse(@RequestBody RestRequestBody requestBody) {
-    ResponseEntity<?> response = restRequestService.getResponse(requestBody);
-//    String responseContent = (String) response.getBody();
-//    RestResponse restResponse = new RestResponse();
-//    restResponse.setContent(responseContent);
-//    return new ResponseEntity<String>(restResponse.toString(), response.getStatusCode());
-    return response;
+  public RestResponse getResponse(@RequestBody RestRequestBody requestBody) {
+    ResponseEntity<String> response = restRequestService.getResponse(requestBody);
+    String responseContent = (String) response.getBody();
+   
+    RestResponse restResponse = new RestResponse();
+    restResponse.setResponseCode(response.getStatusCode().value());
+    restResponse.setContent(responseContent);
+    return restResponse;
+   // return response;
   }
 
 }
