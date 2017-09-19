@@ -37,7 +37,27 @@ function send() {
 	
 	var requestData={'method':method, 'headers':headers, 'url': url, 'data':data};
 	
-	restRquest(requestData);
+	//restRquest(requestData);
+	sendWithAjax(requestData);
+}
+
+function sendWithAjax(requestData) {
+	 $.ajax({
+         type: requestData.method,
+         url: requestData.url, 
+         headers : requestData.headers,
+         data: requestData.data, // <= Providing the form data, serialized above
+         success: function(results){  
+                 // What to do when the ajax is successful. 
+                 // "results" is the response from the url (eg. "theAction" here)
+                 $("#response_body").val(results);
+             },
+         error: function(results){
+                 // What to do when the ajax fails. 
+                 console.log("ERROR");
+                 $("#response_body").val(results);
+         }
+});
 }
 
 function getHeaders() {

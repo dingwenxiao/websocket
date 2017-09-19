@@ -1,12 +1,9 @@
 {
   "realm": "Demo",
   "auth-server-url": "http://192.168.56.101:8080/auth",
-  "resource": "product-app",
-  "bearer-only" : true,
   "ssl-required": "external",
-  "cors-max-age" : 10000,
-  "cors-allowed-methods" : "POST, PUT, DELETE, GET, HEAD",
-  "cors-allowed-headers" : "Access-Control-Allow-Origin, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
-  "enable-cors": true,
-   "public-client": true
+  "resource": "request_client",
+  "credentials": {
+    "secret": "97511e14-d0e7-4999-8b76-917a53baa0db"
+  }
 }
