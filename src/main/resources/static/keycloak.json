@@ -1,9 +1,7 @@
 {
-  "realm": "Demo",
+  "realm": "master",
   "auth-server-url": "http://192.168.56.101:8080/auth",
   "ssl-required": "external",
   "resource": "request_client",
-  "credentials": {
-    "secret": "97511e14-d0e7-4999-8b76-917a53baa0db"
-  }
+  "public-client": true
 }

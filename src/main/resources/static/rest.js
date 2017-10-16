@@ -47,6 +47,8 @@ function sendWithAjax(requestData) {
          url: requestData.url, 
          headers : requestData.headers,
          data: requestData.data, // <= Providing the form data, serialized above
+         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+         crossDomain: true,
          success: function(results){  
                  // What to do when the ajax is successful. 
                  // "results" is the response from the url (eg. "theAction" here)
@@ -68,8 +70,10 @@ function getHeaders() {
 				.val();
 		var headerValue = $(".header-group").children().eq(i).children().eq(1)
 				.val();
+		if(headerName!='' && headerValue!='')
 		headers[headerName] = headerValue;
 	}
+	headers['Access-Control-Allow-Origin'] = 'http://localhost:8080';
 	return headers;
 }
 
